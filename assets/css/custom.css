@@ -1,0 +1,94 @@
+::-webkit-scrollbar {
+width: 13px;
+}
+
+::-webkit-scrollbar-track {
+background: #111;
+border-radius: 3px;
+}
+
+::-webkit-scrollbar-thumb {
+border-radius: 3px;
+background: #666;
+}
+
+
+
+
+
+
+.popdown-wrap { vertical-align: bottom; }
+.popdown-menu {
+position: absolute;
+top: 30px;
+left: 8px;
+z-index: 1000;
+float: left;
+display: none;
+min-width: 132px;
+_width: 132px;
+padding: 3px 9px;
+margin: 0;
+list-style: none;
+background-color: white;
+border-color: #BBB;
+border-style: solid;
+border-width: 1px;
+-webkit-border-radius: 0 0 5px 5px;
+-moz-border-radius: 0 0 5px 5px;
+border-radius: 0 0 5px 5px;
+border-top-color: #EEE;
+}
+.popdown-menu::before {
+content: '';
+display: inline-block;
+border-left: 7px solid transparent;
+border-right: 7px solid transparent;
+border-bottom: 7px solid #CCC;
+border-bottom-color: #CCC;
+position: absolute;
+top: -7px;
+left: 0;
+}
+.popdown-menu::after {
+content: '';
+display: inline-block;
+border-left: 6px solid transparent;
+border-right: 6px solid transparent;
+border-bottom: 6px solid white;
+position: absolute;
+top: -6px;
+left: 1px;
+}
+.popdown {
+display: inline-block;
+padding: 4px 10px 8px;
+margin-bottom: 0;
+color: #333;
+text-align: center;
+text-shadow: 0 1px 1px rgba(255, 255, 255, 0.75);
+cursor: pointer;
+}
+
+
+
+.loading {
+z-index: 9999;
+position: fixed;
+background: #000;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+text-align: center;
+vertical-align: super;
+}
+.loading span {
+position: absolute;
+top: 50%;
+left: 48%;
+background: transparent url(../img/loader.gif);
+height: 48px;
+width: 48px;
+text-indent: -9999px;
+}
