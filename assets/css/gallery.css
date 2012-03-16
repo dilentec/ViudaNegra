@@ -48,6 +48,7 @@
     -o-transition: all 0.2s ease-in-out;
     -ms-transition: all 0.2s ease-in-out;
     transition: all 0.2s ease-in-out;
+    z-index: 1;
 }
 .ib-main a.ib-loading,
 .ib-main a.ib-loading:hover{
@@ -135,6 +136,7 @@
     width: 100%;
     height: 630px; /*dynamic*/
     display: none;
+    z-index: 2;
 }
 .ib-content-preview .ib-teaser h2{
     font-size: 50px;

@@ -1,1 +1,20 @@
 /* HOME */
+
+
+
+/* HISTORIA */
+#target { max-height: 300px; overflow-y: auto; }
+#target img { margin: 13px; }
+#target p { padding: 9px 13px 9px 0; }
+.step strong {
+font-size: 22px;
+text-transform: uppercase;
+font-family: arial;
+margin: 0;
+padding: 0;
+line-height: normal;
+color: #999;
+position: absolute;
+top: 0;
+right: 0;
+}
