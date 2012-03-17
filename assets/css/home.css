@@ -3,10 +3,9 @@
 
 
 /* HISTORIA */
-#target { max-height: 300px; overflow-y: auto; }
 #target img { margin: 13px; }
 #target p { padding: 9px 13px 9px 0; }
-.step strong {
+/*.step strong {
 font-size: 22px;
 text-transform: uppercase;
 font-family: arial;
@@ -17,4 +16,58 @@ color: #999;
 position: absolute;
 top: 0;
 right: 0;
+}*/
+
+
+/* TITLE */
+#canvasfield {
+position: absolute;
+top: -132px;
+left: 209px;
+}
+
+/* ---------- gallery styles start here ----------------------- */
+#title-menu {
+display: block;
+text-align: center;
+margin-top: 69px;
+}
+.title-menu-links {
+list-style: none;
+margin: 0;
+padding: 0;
+display: inline-block;
+}
+.title-menu-links li {
+	margin: 20px;
+	padding: 0;
+	float: left;
+	position: relative;
+	width: 212px;
+	height: 175px;
+}
+
+.title-menu-links a {
+color: #666;
+display: block;
+font-size: 17px;
+text-decoration: none;
+text-transform: lowercase;
+}
+.title-menu-links a:hover {
+	color: #F00;
+}
+.title-menu-links img {
+	padding: 20px 0 0 21px;
+}
+.title-menu-links em {
+	width: 216px;
+	background: url(/assets/img/gold-frame.png) no-repeat;
+	display: block;
+	position: absolute;
+	top: -2px;
+	left: -2px;
+	text-align: center;
+	font: 100%/100% Georgia, "Times New Roman", Times, serif;
+	padding-top: 168px;
 }
