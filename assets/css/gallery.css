@@ -1,10 +1,9 @@
 /* GALLERY */
-
+html { background: url(/assets/img/bgNegra1.jpg); }
 
 
 /* Top Bar */
 .ib-top{
-    background: #fff;
     position: fixed;
     top: 0px;
     left: 0px;
@@ -41,7 +40,6 @@
     overflow: hidden;
     margin: 0px 0px 2px 2px;
     cursor: move;
-    background: #fff url(../images/thumb_bg.jpg) no-repeat center center;
     background-size: 110% 110%;
     -webkit-transition: all 0.2s ease-in-out;
     -moz-transition: all 0.2s ease-in-out;
@@ -52,7 +50,7 @@
 }
 .ib-main a.ib-loading,
 .ib-main a.ib-loading:hover{
-    background: #fff url(../images/ajax-loader.gif) no-repeat center center;
+    background: transparent url(../img/loader.gif) no-repeat center center;
     background-size: 31px 31px;
 }
 .ib-main a.ib-loading img,
@@ -97,12 +95,9 @@
 .ib-main a:hover{
     background-size: 100% 100%;
 }
-.ib-content{
-    background: #f9f9f9;
-}
+.ib-content{ }
 .ib-content .ib-teaser{
     text-align: center;
-    background: #333;
     width: 100%;
     height: 100%;
     -webkit-transition: all 0.2s ease-in-out;
@@ -125,9 +120,7 @@
     font-style: italic;
     display: block;
 }
-.ib-content .ib-teaser:hover{
-    background: #000;
-}
+.ib-content .ib-teaser:hover{ }
 .ib-content-preview{
     position: absolute;
     top: 44px;
@@ -185,7 +178,7 @@
     text-indent: -9000px;
 	opacity: 0.6;
 	z-index: 999;
-    background: transparent url(../images/nav.png) no-repeat top right;
+    background: transparent url(../img/nav.png) no-repeat top right;
 	right: 10px;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -201,7 +194,7 @@
 .ib-close{
 	top: 7px;
 	right: 7px;
-	background: transparent url(../images/close.png) no-repeat center center;
+	background: transparent url(../img/close.png) no-repeat center center;
 	position: absolute;
 	width: 24px;
 	height: 24px;
@@ -217,7 +210,7 @@
     text-indent: -9000px;
     width: 60px;
     height: 60px;
-    background: #fff url(../images/ajax-loader.gif) no-repeat center center;
+    background: transparent url(../img/loader.gif) no-repeat center center;
     position: absolute;
     top: 50%;
     left: 50%;

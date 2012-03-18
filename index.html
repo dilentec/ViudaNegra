@@ -8,52 +8,255 @@
 	<title>Viuda Negra | Costa Rica </title>
 
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/css/home.css">
 	<link rel="stylesheet" href="assets/css/su.css">
+
+	<!-- Libraries -->
+	<script src="assets/libs/jquery/jquery.js"></script>
+	<script src="assets/libs/bootstrap/bootstrap.js"></script>
+	<script src="assets/plugins/waterwheel.js"></script>
+
+	<!-- Disabled 
+	<script src="assets/libs/slimbox/slimbox2.js"></script>
+	<script src="assets/libs/underscore/underscore.js"></script>
+	<script src="assets/libs/backbone/backbone.js"></script>
+	<script src="assets/libs/jquery/easing.js"></script>-->
+	
+
+	<script type="text/javascript">
+		WebFontConfig = {
+			google: { families: [ 'Ruthie::latin' ] }
+		};
+		(function() {
+			var wf = document.createElement('script');
+			wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+				'://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+			wf.type = 'text/javascript';
+			wf.async = 'true';
+			var s = document.getElementsByTagName('script')[0];
+			s.parentNode.insertBefore(wf, s);
+		})();
+	</script>
+
+	<script>
+	if ("ontouchstart" in document.documentElement) { 
+		document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
+	}
+	</script>
 </head>
 
 <body>
 
-	<div role="main" id="main">
-		<div class="loading"><span>Espere..</span></div>
+	<div class="fallback-message">
+		<p>Your browser <b>doesn't support the features required</b> by impress.js, so you are presented with a simplified version of this presentation.</p>
+		<p>For the best experience please use the latest <b>Chrome</b>, <b>Safari</b> or <b>Firefox</b> browser.</p>
 	</div>
 
-	<!-- <canvas id='oilPaint'></canvas> -->
+	<div id="impress">
+
+			<div id="title" class="step" data-x="0" data-y="0" data-scale="1">
+				<img id="logo-spider" src="/assets/img/spiderBig.png">
+				<div id="logo-by" class="">Tattoo by</div>
+				<h1 id="logo-viuda" class="text-shadow">Viuda</h1>
+				<h1 id="logo-negra" class="text-shadow">Negra</h1>
+				<div class="title-details">TATTOO &bull; BODYMOD &bull; PIERCING &bull; IMPLANTES &bull; SCARIFICATION &bull; SUSPENSIONES</div>
+
+				<canvas id="canvasfield" width="450" height="450"></canvas>
+
+				<script>
+					var canvasField;
+					var theContext;
+					var centralPoint = new point(225, 225);	//円の中心座標
+					var divisionNumber = 72;		//円の分割数
+					var circleRadius = 180;			//円の半径
+					var circlePoints = new Array();		//円周上の座標
+					var targetPoints = new Array();		//移動目標の座標
+					var pathPoints = new Array();
+
+					var wrapDistance = 50;
+					var reactionRange = 250;
+					var k = 0;
+
+					function draw() {
+						theContext.clearRect(0, 0, 450, 450);
+						
+						theContext.save();
+						theContext.lineWidth = 1;
+						theContext.strokeStyle = "rgba(255, 0, 0, " + (0.05 * k) + ")";
+						theContext.translate(centralPoint.x, centralPoint.y);
+						theContext.scale(0.5, 0.5);
+						theContext.translate(-centralPoint.x, -centralPoint.y);
+						theContext.beginPath();
+						theContext.moveTo(pathPoints[divisionNumber - 1].x, pathPoints[divisionNumber - 1].y);
+						for (j = 0; j < divisionNumber; j++) {
+							theContext.lineTo(pathPoints[j].x, pathPoints[j].y);
+						}
+						theContext.closePath();
+						theContext.stroke();
+						theContext.restore();
+						
+						for (i = 0; i < 10; i++) {
+							theContext.save();
+							
+							theContext.lineWidth = 1;
+							theContext.strokeStyle = "rgba(255, 0, 0, " + (1 - (i + 0.05 * k) * 0.1) + ")";
+							
+							theContext.translate(centralPoint.x, centralPoint.y);
+							theContext.scale(0.5 + (i + 0.05 * k) * 0.05, 0.5 + (i + 0.05 * k) * 0.05);
+							theContext.translate(-centralPoint.x, -centralPoint.y);
+							
+							theContext.beginPath();
+							theContext.moveTo(pathPoints[divisionNumber - 1].x, pathPoints[divisionNumber - 1].y);
+							for (j = 0; j < divisionNumber; j++) {
+								theContext.lineTo(pathPoints[j].x, pathPoints[j].y);
+							}
+							theContext.closePath();
+							theContext.stroke();
+							
+							theContext.restore();
+						}
+					}
+
+					function start() {
+						canvasField = document.getElementById("canvasfield");
+						theContext = canvasField.getContext("2d");
+						
+						for (i = 0; i < divisionNumber; i++) {
+							circlePoints[i] = getPointOnCircle(circleRadius, (i * Math.PI * 2 / divisionNumber));
+							circlePoints[i].movePoint(centralPoint.x, centralPoint.y);
+							pathPoints[i] = new point(circlePoints[i].x, circlePoints[i].y);
+						}
+
+						setInterval(function(){
+							/* targetPointsを設定 */
+							for (i = 0; i < divisionNumber; i++) {
+								targetPoints[i] = new point(circlePoints[i].x, circlePoints[i].y);
+							}
+							
+							for (i = 0; i < divisionNumber; i++) {
+								pathPoints[i].movePoint((targetPoints[i].x - pathPoints[i].x) / 10, (targetPoints[i].y - pathPoints[i].y) / 10);
+							}
+							
+							k = (k + 1) % 20;
+							draw();
+						}, 100);
+					}
 
 
-	<!-- Libraries -->
-	<script src="assets/libs/jquery/jquery.js"></script>
-	<script src="assets/libs/underscore/underscore.js"></script>
-	<script src="assets/libs/backbone/backbone.js"></script>
-	<script src="assets/libs/bootstrap/bootstrap.js"></script>
+					function point(theX, theY) {	//座標オブジェクト
+						this.x = theX;
+						this.y = theY;
+						this.movePoint = function(moveX, moveY) {
+							this.x += moveX;
+							this.y += moveY;
+						}
+						this.moveUsingAngle = function(theAngle, theDistance) {
+							this.x += theDistance * Math.cos(theAngle);
+							this.y += theDistance * Math.sin(theAngle);
+						}
+					}
 
-	<!-- Plugins 
-	<script src="assets/libs/slimbox/slimbox2.js"></script>
-	<script src="assets/libs/jquery/easing.js"></script>-->
+					function getPointOnCircle(r, theAngle) {
+						var x = r * Math.cos(theAngle);
+						var y = r * Math.sin(theAngle);
+						return new point(x, y);
+					}
+					start();
+				</script>
 
-	<!-- Application -->
-	<script src="app/viudanegra.js"></script>
-	<script src="app/modules/home.js"></script>
-	<script src="app/modules/gallery.js"></script>
-	<script src="app/modules/supplies.js"></script>
+				<nav id="title-menu">
+					<ul class="title-menu-links clearfix">
+						<li><a href="#gallery" id="gallery-link">Gallereia</a></li>
+						<li><a href="#supplies" id="supplies-link">Supplies</a></li>
+					</ul>
+				</nav>
+
+				<a href="/#/historia" id="historia-link">Historia →</a>
+				<a href="/#/artista" id="artista-link">← Studio</a>
+				<a href="//facebook.com/viudanegra" id="fb-link" target="_new" rel="tip" title="Visitante Viuda Negra en Facebook">Facebook</a>
+
+			</div>
+
+			<div id="artista" class="step" data-x="6660" data-y="369" data-rotate="90" data-scale="2" data-z="-10">
+				<strong class="text-shadow">El Studio</strong>
+				<!-- BEGIN COPYING HERE -->
+				<div id="waterwheel-carousel-default">
+					<div class="carousel-controls">
+						<div class="carousel-prev"><a href="#">&lt; previous</a></div>
+						<div class="carousel-next"><a href="#">&gt; next</a></div>
+					</div>
+					<div id="studio-images" class="carousel-images">
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra1.jpg" alt="Test Image 1" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra2.jpg" alt="Test Image 2" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra3.jpg" alt="Test Image 3" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra4.jpg" alt="Test Image 4" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra5.jpg" alt="Test Image 5" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra6.jpg" alt="Test Image 6" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra7.jpg" alt="Test Image 7" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra8.jpg" alt="Test Image 8" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra9.jpg" alt="Test Image 9" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra10.jpg" alt="Test Image 10" />
+						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra11.jpg" alt="Test Image 11" />
+					</div>
+				</div>
+				<!-- END COPYING HERE -->
+				<img id="logo-spider-walk" src="/assets/img/spiderWalking.png">
+			</div>
+
+			<div id="historia" class="step" data-x="69" data-y="4340" data-rotate="180" data-scale="3" data-z="-20">
+				<strong id="life-story-title" class="text-shadow">Miss Viuda Negra</strong>
+				<div id="target" class="clearfix">
+					<p><img id="history-img-one" src="/assets/img/viudanegralong.jpg" class="fL">
+					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales ullamcorper urna, vel elementum massa pulvinar id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce in metus justo. Suspendisse tincidunt libero ullamcorper eros mollis faucibus. Praesent a congue lacus. Phasellus ac eros justo. Vivamus arcu nisl, pharetra a viverra quis, mattis eu nulla. Donec ultrices fringilla urna nec venenatis. Etiam volutpat nisi non sapien tempus eu euismod sapien blandit. Sed pretium, diam ac viverra faucibus, metus dolor suscipit mauris, nec ornare mauris leo a metus. Pellentesque lectus ante, consectetur ut convallis vel, sagittis id nisl. Fusce viverra fringilla orci eu vestibulum.</p>
+
+					<p>Suspendisse potenti. Nunc eu felis neque, ac pellentesque velit. Nulla sed sapien sit amet nisi egestas porta in rhoncus mi. Quisque luctus tellus et erat pellentesque adipiscing. Mauris vulputate, elit at ullamcorper ultricies, lacus est eleifend nulla, sit amet bibendum libero ipsum vel elit. Pellentesque mollis mi fringilla dui rhoncus ac porttitor nulla ultricies. Donec vehicula tempor sagittis. Aliquam erat volutpat. Sed imperdiet ipsum ac quam porttitor pellentesque. Morbi non metus eu nunc blandit lobortis. Quisque condimentum sem suscipit nibh dapibus sed porta quam laoreet.<img id="history-img-two" src="/assets/img/viudanegrasquare.jpg" class="fR"></p>
+
+					<p>Donec cursus nisi nec tortor congue tincidunt. Nulla varius ante nec tortor blandit ut congue purus ullamcorper. Quisque et sem non turpis porta iaculis eu a odio. Pellentesque malesuada justo nec lacus commodo auctor. Sed nulla ligula, venenatis adipiscing cursus in, tempus at orci. Quisque at libero ut justo bibendum pellentesque eget in tellus. Aliquam volutpat condimentum ante eget ultricies. Vestibulum velit mauris, malesuada eu hendrerit sed, iaculis sed sem. Fusce id augue sem. Phasellus auctor gravida dapibus. Ut consequat est magna. Mauris quis porttitor urna.</p>
+				</div>
+			</div>
+
+			<!--
+					
+					So to make a summary of all the possible attributes used to position presentation steps, we have:
+					
+					* `data-x`, `data-y`, `data-z` -- they define the position of **the center** of step element on
+							the canvas in pixels; their default value is 0;
+					* `data-rotate-x`, `data-rotate-y`, 'data-rotate-z`, `data-rotate` -- they define the rotation of
+							the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
+							are exactly the same;
+					* `data-scale` -- defines the scale of step element; default value is 1
+					
+			-->
+			<!-- <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
+			</div> -->
+	</div>
+
+	<img id="logo-spider-wall" src="/assets/img/spiderSide.png">
+
+	<div class="hint"><p>Use a spacebar or arrow keys to navigate</p></div>
 
 	<script>
 	!function ($) {
 		$(function(){
 
-			//Run Viuda Negra app
-			window.viudanegraInstance = $('#main').viudanegraUi({ });
-
-
 			$('[rel=tip]').tooltip();
 			//$("[rel=pop]").popover();
 
-			//load oil painting background : oilpaint.js
-			//var oilApp = new OilPainting();
-			//oilApp.initialize();
+			impress();
+
+			$("#waterwheel-carousel-default").waterwheelCarousel();
+
+			$("#studio-images").on("click", "img.active", function() {
+			  var zoomLink = $(this).attr('data-url');
+			  //alert( zoomLink );
+			  $('html').css("background", "url("+ zoomLink +")");
+			});
 
 		})
 	}(window.jQuery);
 	</script>
+
+	<script src="assets/plugins/impress.js"></script>
 
 </body>
 </html>
