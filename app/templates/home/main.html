@@ -1,9 +1,20 @@
+<script type="text/javascript">
+  WebFontConfig = {
+    google: { families: [ 'Ruthie::latin' ] }
+  };
+  (function() {
+    var wf = document.createElement('script');
+    wf.src = ('https:' == document.location.protocol ? 'https' : 'http') +
+      '://ajax.googleapis.com/ajax/libs/webfont/1/webfont.js';
+    wf.type = 'text/javascript';
+    wf.async = 'true';
+    var s = document.getElementsByTagName('script')[0];
+    s.parentNode.insertBefore(wf, s);
+  })();
+</script>
+
 <style>
 body {
-/*background: rgba(0,0,0,1);
-background: rgba(0,0,0,1) url(/assets/img/web.png);
-background-position: 0;
-background-size: cover;*/
 /*background-color:#005D8C;
 background-image: -moz-radial-gradient(50% 50%, ellipse cover, #005D8C, #000030 100%);
 background-image: -webkit-radial-gradient(50% 50%, ellipse cover, #005D8C, #000030 100%);
@@ -72,7 +83,7 @@ background-image: radial-gradient(50% 50%, ellipse cover, #005D8C, #000030 100%)
 					
 					theContext.save();
 					theContext.lineWidth = 1;
-					theContext.strokeStyle = "rgba(0, 255, 255, " + (0.05 * k) + ")";
+					theContext.strokeStyle = "rgba(255, 0, 0, " + (0.05 * k) + ")";
 					theContext.translate(centralPoint.x, centralPoint.y);
 					theContext.scale(0.5, 0.5);
 					theContext.translate(-centralPoint.x, -centralPoint.y);
@@ -89,7 +100,7 @@ background-image: radial-gradient(50% 50%, ellipse cover, #005D8C, #000030 100%)
 						theContext.save();
 						
 						theContext.lineWidth = 1;
-						theContext.strokeStyle = "rgba(0, 255, 255, " + (1 - (i + 0.05 * k) * 0.1) + ")";
+						theContext.strokeStyle = "rgba(255, 0, 0, " + (1 - (i + 0.05 * k) * 0.1) + ")";
 						
 						theContext.translate(centralPoint.x, centralPoint.y);
 						theContext.scale(0.5 + (i + 0.05 * k) * 0.05, 0.5 + (i + 0.05 * k) * 0.05);
@@ -156,8 +167,9 @@ background-image: radial-gradient(50% 50%, ellipse cover, #005D8C, #000030 100%)
 
 			<nav id="title-menu">
 				<ul class="title-menu-links clearfix">
-					<li><a href="#gallery"><em>GALLERY</em><img src="//placehold.it/191x140" alt="gallery"></a></li>
-					<li><a href="#merchendize"><em>MERCHENDIZE</em><img src="//placehold.it/191x140" alt="merchendize"></a></li>
+					<li><a href="#gallery" id="gallery-link">Gallereia</a></li>
+					<li><a href="#supplies" id="supplies-link">Tattoo Supplies</a></li>
+					<li><a href="//facebook.com/viudanegra" id="fb-link" target="_new" rel="tip" title="Visitante Viuda Negra en Facebook">Facebook</a></li>
 				</ul>
 			</nav>	
 
@@ -169,16 +181,12 @@ background-image: radial-gradient(50% 50%, ellipse cover, #005D8C, #000030 100%)
 		</div>
 
 		<div id="historia" class="step" data-x="69" data-y="4340" data-rotate="180" data-scale="6" data-z="-200">
-			<strong id="life-story-title">Historia</strong>
+			<strong id="life-story-title" class="text-shadow">Miss Patricia historia</strong>
 			<div id="target" class="clearfix">
-				<p><img src="//placehold.it/333x666" class="fL">
+				<p><img id="history-img-one" src="/assets/img/viudanegralong.jpg" class="fL">
 				Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales ullamcorper urna, vel elementum massa pulvinar id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce in metus justo. Suspendisse tincidunt libero ullamcorper eros mollis faucibus. Praesent a congue lacus. Phasellus ac eros justo. Vivamus arcu nisl, pharetra a viverra quis, mattis eu nulla. Donec ultrices fringilla urna nec venenatis. Etiam volutpat nisi non sapien tempus eu euismod sapien blandit. Sed pretium, diam ac viverra faucibus, metus dolor suscipit mauris, nec ornare mauris leo a metus. Pellentesque lectus ante, consectetur ut convallis vel, sagittis id nisl. Fusce viverra fringilla orci eu vestibulum.</p>
 
-				<p>Cras pulvinar quam purus. Aliquam tempus facilisis dolor eu tincidunt. Donec quis urna tellus, ut rutrum metus. Sed magna enim, condimentum sed hendrerit sagittis, pharetra et magna. Sed sed lorem eget nulla gravida dictum a sed sem. Mauris vel justo quam. Donec vehicula condimentum volutpat. Nullam eget aliquet nisl.</p>
-
-				<p>Aenean interdum massa eget tellus molestie sodales. Sed vitae libero ac risus rutrum posuere non condimentum metus. Morbi mollis nulla ac nulla accumsan vehicula. Aenean egestas tortor non sapien cursus et elementum orci consequat. Sed a enim sit amet magna laoreet bibendum. Morbi id lorem vitae enim facilisis pretium. Fusce eu dui nec enim dapibus convallis vel molestie justo. Phasellus ornare euismod commodo. Integer vitae lectus eros. Morbi tristique mattis est nec dictum. Integer at arcu lorem. Integer at urna libero.</p>
-
-				<p>Suspendisse potenti. Nunc eu felis neque, ac pellentesque velit. Nulla sed sapien sit amet nisi egestas porta in rhoncus mi. Quisque luctus tellus et erat pellentesque adipiscing. Mauris vulputate, elit at ullamcorper ultricies, lacus est eleifend nulla, sit amet bibendum libero ipsum vel elit. Pellentesque mollis mi fringilla dui rhoncus ac porttitor nulla ultricies. Donec vehicula tempor sagittis. Aliquam erat volutpat. Sed imperdiet ipsum ac quam porttitor pellentesque. Morbi non metus eu nunc blandit lobortis. Quisque condimentum sem suscipit nibh dapibus sed porta quam laoreet.<img src="//placehold.it/222x123" class="fR"></p>
+				<p>Suspendisse potenti. Nunc eu felis neque, ac pellentesque velit. Nulla sed sapien sit amet nisi egestas porta in rhoncus mi. Quisque luctus tellus et erat pellentesque adipiscing. Mauris vulputate, elit at ullamcorper ultricies, lacus est eleifend nulla, sit amet bibendum libero ipsum vel elit. Pellentesque mollis mi fringilla dui rhoncus ac porttitor nulla ultricies. Donec vehicula tempor sagittis. Aliquam erat volutpat. Sed imperdiet ipsum ac quam porttitor pellentesque. Morbi non metus eu nunc blandit lobortis. Quisque condimentum sem suscipit nibh dapibus sed porta quam laoreet.<img id="history-img-two" src="/assets/img/viudanegrasquare.jpg" class="fR"></p>
 
 				<p>Donec cursus nisi nec tortor congue tincidunt. Nulla varius ante nec tortor blandit ut congue purus ullamcorper. Quisque et sem non turpis porta iaculis eu a odio. Pellentesque malesuada justo nec lacus commodo auctor. Sed nulla ligula, venenatis adipiscing cursus in, tempus at orci. Quisque at libero ut justo bibendum pellentesque eget in tellus. Aliquam volutpat condimentum ante eget ultricies. Vestibulum velit mauris, malesuada eu hendrerit sed, iaculis sed sem. Fusce id augue sem. Phasellus auctor gravida dapibus. Ut consequat est magna. Mauris quis porttitor urna.</p>
 			</div>

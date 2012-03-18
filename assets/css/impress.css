@@ -4,24 +4,14 @@
 /* COMMON STEP STYLES */
 
 .step {
-width: 900px;
-padding: 40px;
-
+width: 940px;
+padding: 0px;
 -webkit-box-sizing: border-box;
 -moz-box-sizing:    border-box;
 -ms-box-sizing:     border-box;
 -o-box-sizing:      border-box;
 box-sizing:         border-box;
 
-font-family: 'PT Serif', georgia, serif;
-
-font-size: 48px;
-line-height: 1.5;
-}
-
-/* fade out inactive slides */
-
-.step {
 -webkit-transition: opacity 1s;
 -moz-transition:    opacity 1s;
 -ms-transition:     opacity 1s;
@@ -29,19 +19,17 @@ line-height: 1.5;
 transition:         opacity 1s;
 }
 
-.step:not(.active) {
-opacity: 0.3;
-}
+/* fade out inactive slides */
+.step:not(.active) { opacity: 0.2; }
 
 /* STEP SPECIFIC STYLES */
 
 /* hint on the first slide */
-
 .hint {
 position: fixed;
 left: 0;
 right: 0;
-bottom: 200px;
+bottom: 42px;
 
 background: rgba(0,0,0,0.5);
 color: #EEE;
@@ -83,55 +71,6 @@ transition:         opacity 1s 5s,         transform 0.5s;
 transform:         translateY(0px);
 }
 
-/* impress.js title */
-
-#title {
-padding: 0;
-min-height: 666px;
-}
-#title h1 {
-font-size: 122px;
--webkit-transform: translateZ(50px);
--moz-transform: translateZ(50px);
--ms-transform: translateZ(50px);
--o-transform: translateZ(50px);
-transform: translateZ(50px);
-line-height: normal;
-display: inline-block;
-z-index: 2;
-}
-#logo-spider {
-position: absolute;
-top: -132px;
-left: 333px;
-z-index: 2;
-}
-#logo-viuda {
-position: absolute;
-top: 69px;
-left: 55px;
-}
-#logo-negra {
-position: absolute;
-top: 79px;
-right: 81px;
-}
-.title-details {
-font-size: 18px;
-margin-top: 236px;
-text-align: center;
-z-index: 2;
-}
-
-
-/* Historia step */
-#logo-spider-walk {
-position: absolute;
-left: 181px;
-top: 81px;
-max-width: 222px;
-}
-
 
 
 /* overview step */
@@ -148,51 +87,6 @@ opacity: 1;
 cursor: pointer;
 }
 
-/*
-* SLIDE STEP STYLES
-*
-* inspired by: http://html5slides.googlecode.com/svn/trunk/styles.css
-*
-* ;)
-*/
-
-.slide {
-display: block;
-
-width: 900px;
-height: 700px;
-
-padding: 40px 60px;
-
-border-radius: 10px;
-
-background-color: white;
-
-box-shadow: 0 2px 6px rgba(0, 0, 0, .1);
-border: 1px solid rgba(0, 0, 0, .3);
-
-font-family: 'Open Sans', Arial, sans-serif;
-
-color: rgb(102, 102, 102);
-text-shadow: 0 2px 2px rgba(0, 0, 0, .1);
-
-font-size: 30px;
-line-height: 36px;
-
-letter-spacing: -1px;
-}
-
-.slide q {
-display: block;
-font-size: 50px;
-line-height: 72px;
-
-margin-top: 100px;
-}
-
-.slide q strong {
-white-space: nowrap;
-}
 
 
 /* IMPRESS NOT SUPPORTED STYLES */

@@ -1,30 +1,104 @@
 /* HOME */
+.impress-on-title {
+background: rgba(255,255,255,1) url(/assets/img/web.png);
+background-position: 0;
+background-size: cover;
+}
 
 
+/* ARTISTA */
+.impress-on-artista {
+background: rgba(96,96,96,1) url(/assets/img/web.png);
+background-position: 0;
+background-size: cover;
+}
 
 /* HISTORIA */
-#target img { margin: 13px; }
-#target p { padding: 9px 13px 9px 0; }
-/*.step strong {
-font-size: 22px;
-text-transform: uppercase;
-font-family: arial;
-margin: 0;
-padding: 0;
+.impress-on-historia {
+background: rgba(0,0,0,1) url(/assets/img/web.png);
+background-position: 0;
+background-size: cover;
+}
+
+#target img { margin: 0 13px 13px 0; }
+#target p {
+padding: 9px 13px 9px 0;
+font-size: 142%;
 line-height: normal;
 color: #999;
-position: absolute;
-top: 0;
-right: 0;
-}*/
+text-shadow: 0px 0px 1px rgba(255, 0, 0,0.4);
+}
+#history-img-one { max-height: 420px; }
+#history-img-two { max-width: 142px; padding: 13px; }
+
+#life-story-title {
+font-weight: normal;
+color: rgba(0,0,0,.96);
+font-family: 'Ruthie', cursive;
+font-size: 69px;
+}
 
 
 /* TITLE */
 #canvasfield {
 position: absolute;
-top: -132px;
+top: -96px;
 left: 209px;
 }
+
+/* impress.js title */
+
+#title {
+padding: 0;
+min-height: 666px;
+}
+#title h1 {
+font-size: 196px;
+-webkit-transform: translateZ(50px);
+-moz-transform: translateZ(50px);
+-ms-transform: translateZ(50px);
+-o-transform: translateZ(50px);
+transform: translateZ(50px);
+line-height: normal;
+display: inline-block;
+z-index: 2;
+font-weight: normal;
+color: rgba(0,0,0,.96);
+font-family: 'Ruthie', cursive;
+}
+#logo-spider {
+position: absolute;
+top: -96px;
+left: 333px;
+z-index: 2;
+}
+#logo-viuda {
+position: absolute;
+top: 69px;
+left: 13px;
+}
+#logo-negra {
+position: absolute;
+top: 79px;
+right: 32px;
+}
+.title-details {
+font-size: 18px;
+margin-top: 273px;
+text-align: center;
+z-index: 2;
+}
+
+
+/* Historia step */
+#logo-spider-walk {
+position: absolute;
+left: 111px;
+bottom: -83px;
+max-width: 222px;
+}
+
+
 
 /* ---------- gallery styles start here ----------------------- */
 #title-menu {
@@ -43,31 +117,55 @@ display: inline-block;
 	padding: 0;
 	float: left;
 	position: relative;
-	width: 212px;
-	height: 175px;
+	display: inline-block;
 }
 
 .title-menu-links a {
 color: #666;
 display: block;
-font-size: 17px;
 text-decoration: none;
-text-transform: lowercase;
 }
 .title-menu-links a:hover {
 	color: #F00;
 }
-.title-menu-links img {
-	padding: 20px 0 0 21px;
+
+#gallery-link {
+font-family: 'Ruthie', cursive;
+font-weight: bold;
+font-size: 88px;
+line-height: 1;
 }
-.title-menu-links em {
-	width: 216px;
-	background: url(/assets/img/gold-frame.png) no-repeat;
-	display: block;
-	position: absolute;
-	top: -2px;
-	left: -2px;
-	text-align: center;
-	font: 100%/100% Georgia, "Times New Roman", Times, serif;
-	padding-top: 168px;
+
+#supplies-link {
+font-family: sans-serif;
+font-weight: normal;
+font-size: 69px;
+line-height: 69px;
+width: 222px;
+}
+
+#fb-link {
+position: relative;
+border-color: #3c5a98;
+text-transform: lowercase;
+text-indent: 42px;
+letter-spacing: 10px;
+font-weight: bold;
+font-size: 64px;
+line-height: 69px;
+color: #fff;
+background: #3c5a98;
+-moz-box-shadow: 0 0 4px rgba(0,0,0,0.4);
+-webkit-box-shadow: 0 0 4px rgba(0,0,0,0.4);
+box-shadow: 0 0 4px rgba(0,0,0,0.4);
+display: block;
+width: 69px;
+height: 69px;
+overflow: hidden;
+border: 1px solid transparent;
+text-decoration: none;
+text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
+-moz-border-radius: 5px;
+-webkit-border-radius: 5px;
+border-radius: 5px;
 }
