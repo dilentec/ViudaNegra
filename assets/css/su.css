@@ -16,6 +16,7 @@ body { background: transparent url(/assets/img/web.png); }
 .inlined { display: inline-block; vertical-align: top;}
 .relative { position: relative; }
 .marge { margin-top: 42px; }
+.hide { display: none; }
 
 .text-shadow {
 text-shadow: 0 1px 0 #900,

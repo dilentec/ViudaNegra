@@ -1,5 +1,5 @@
 /* GALLERY */
-html { background: url(/assets/img/bgNegra1.jpg); }
+html { background: url(/assets/img/gallery/bg.jpg); }
 
 
 /* Top Bar */
@@ -7,7 +7,6 @@ html { background: url(/assets/img/bgNegra1.jpg); }
     position: fixed;
     top: 0px;
     left: 0px;
-    width: 100%;
     z-index: 10;
     height: 40px;
 }
@@ -156,6 +155,7 @@ html { background: url(/assets/img/bgNegra1.jpg); }
     position: absolute;
     top: 40px;
     display: none;
+    z-index: 3;
 }
 .ib-preview-descr{
     position: absolute;
@@ -178,7 +178,7 @@ html { background: url(/assets/img/bgNegra1.jpg); }
     text-indent: -9000px;
 	opacity: 0.6;
 	z-index: 999;
-    background: transparent url(../img/nav.png) no-repeat top right;
+    background: pink url(../img/nav.png) no-repeat top right;
 	right: 10px;
 	-webkit-user-select: none;
 	-khtml-user-select: none;
@@ -194,7 +194,7 @@ html { background: url(/assets/img/bgNegra1.jpg); }
 .ib-close{
 	top: 7px;
 	right: 7px;
-	background: transparent url(../img/close.png) no-repeat center center;
+	background: red url(../img/close.png) no-repeat center center;
 	position: absolute;
 	width: 24px;
 	height: 24px;

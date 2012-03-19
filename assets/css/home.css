@@ -1,5 +1,10 @@
 /* HOME */
 .impress-on-title { }
+#bullet-separator {
+font-size: 96px;
+margin-top: 69px;
+color: #fff;
+}
 
 
 /* ARTISTA */
@@ -10,8 +15,54 @@ color: rgba(0,0,0,.96);
 font-family: 'Ruthie', cursive;
 font-size: 96px;
 position: absolute;
-top: -69px;
+top: -169px;
 left: -169px;
+}
+#studio-info {
+position: absolute;
+top: -13px;
+left: -132px;
+background: rgba(0, 0, 0,0.9);
+padding: 32px;
+border-radius: 6px;
+}
+#info-tel em {
+color: #666;
+font-size: 81%;
+}
+#info-tel {
+color: red;
+font-weight: bold;
+font-size: 181%;
+margin: 13px 0;
+display: block;
+}
+#info-hours time {
+font-size: 120%;
+display: block;
+margin-left: 42px;
+margin-bottom: 13px;
+}
+#info-hours {
+margin: 13px 0;
+color: snow;
+font-size: 132%;
+}
+#studio-info address {
+font-size: 22px;
+line-height: normal;
+}
+.impress-on-artista #img-viewer { display: block; }
+#img-viewer {
+position: fixed;
+top: 0;
+bottom: 0;
+left: 0;
+right: 0;
+background-size: cover;
+background-position: 0 0;
+display: none;
+z-index: -1;
 }
 
 
@@ -40,6 +91,7 @@ left: -133px;
 -ms-transform: scale(1) rotate(-13deg) translate(0px, 0px) skew(0deg, 0deg);
 transform: scale(1) rotate(-13deg) translate(0px, 0px) skew(0deg, 0deg);
 }
+#artista-link:hover { color: #fff; text-decoration: none; }
 
 #historia-link {
 font-weight: normal;
@@ -47,14 +99,15 @@ color: rgba(0,0,0,.96);
 font-family: 'Ruthie', cursive;
 font-size: 69px;
 position: absolute;
-bottom: 245px;
-right: -201px;
+bottom: 196px;
+right: -196px;
 -moz-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 -webkit-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 -o-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 -ms-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 }
+#historia-link:hover { color: #fff; text-decoration: none; }
 
 #target img { margin: 0 13px 13px 0; }
 #target p {
@@ -81,8 +134,8 @@ right: 0;
 /* TITLE */
 #canvasfield {
 position: absolute;
-top: -96px;
-left: 209px;
+top: 123px;
+left: 249px;
 }
 
 /* impress.js title */
@@ -116,23 +169,24 @@ left: -160px;
 }
 #logo-spider {
 position: absolute;
-top: -96px;
-left: 333px;
+top: 0px;
+left: 273px;
 z-index: 2;
+max-width: 369px;
 }
 #logo-viuda {
 position: absolute;
-top: 69px;
-left: 13px;
+top: 209px;
+left: -37px;
 }
 #logo-negra {
 position: absolute;
-top: 79px;
-right: 32px;
+top: 189px;
+right: -58px;
 }
 .title-details {
 font-size: 18px;
-margin-top: 273px;
+margin-top: 511px;
 text-align: center;
 z-index: 2;
 }
@@ -141,8 +195,8 @@ z-index: 2;
 /* Historia step */
 #logo-spider-walk {
 position: absolute;
-left: 111px;
-bottom: -83px;
+left: -94px;
+bottom: -153px;
 max-width: 222px;
 }
 
@@ -169,12 +223,13 @@ display: inline-block;
 }
 
 .title-menu-links a {
-color: #666;
+color: #fff;
 display: block;
 text-decoration: none;
 }
 .title-menu-links a:hover {
-	color: #F00;
+	color: #000;
+	text-decoration: none;
 }
 
 #gallery-link {
@@ -215,7 +270,6 @@ text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
 -moz-border-radius: 5px;
 -webkit-border-radius: 5px;
 border-radius: 5px;
-left: 50%;
-margin-left: -22px;
-bottom: 69px;
+right: 0;
+top: 0;
 }

@@ -37,12 +37,6 @@
 			s.parentNode.insertBefore(wf, s);
 		})();
 	</script>
-
-	<script>
-	if ("ontouchstart" in document.documentElement) { 
-		document.querySelector(".hint").innerHTML = "<p>Tap on the left or right to navigate</p>";
-	}
-	</script>
 </head>
 
 <body>
@@ -55,8 +49,8 @@
 	<div id="impress">
 
 			<div id="title" class="step" data-x="0" data-y="0" data-scale="1">
-				<img id="logo-spider" src="/assets/img/spiderBig.png">
-				<div id="logo-by" class="">Tattoo by</div>
+				<img id="logo-spider" src="/assets/img/logo.png">
+				<div id="logo-by" class="hide">Tattoo by</div>
 				<h1 id="logo-viuda" class="text-shadow">Viuda</h1>
 				<h1 id="logo-negra" class="text-shadow">Negra</h1>
 				<div class="title-details">TATTOO &bull; BODYMOD &bull; PIERCING &bull; IMPLANTES &bull; SCARIFICATION &bull; SUSPENSIONES</div>
@@ -166,37 +160,54 @@
 
 				<nav id="title-menu">
 					<ul class="title-menu-links clearfix">
-						<li><a href="#gallery" id="gallery-link">Gallereia</a></li>
-						<li><a href="#supplies" id="supplies-link">Supplies</a></li>
+						<li><a href="/gallery" id="gallery-link" class="text-shadow">Gallereia</a></li>
+						<li id="bullet-separator" class="text-shadow">&bull;</li>
+						<li><a href="/supplies" id="supplies-link" class="text-shadow">Supplies</a></li>
 					</ul>
 				</nav>
 
-				<a href="/#/historia" id="historia-link">Historia →</a>
-				<a href="/#/artista" id="artista-link">← Studio</a>
-				<a href="//facebook.com/viudanegra" id="fb-link" target="_new" rel="tip" title="Visitante Viuda Negra en Facebook">Facebook</a>
+				<a href="/#/historia" id="historia-link" class="text-shadow">Historia <em>→</em></a>
+				<a href="/#/artista" id="artista-link" class="text-shadow"><em>←</em> Studio</a>
+				<a href="//facebook.com/viudanegra" id="fb-link" target="_new" rel="tip" title="Visitante Viuda Negra en Facebook" data-placement="left">Facebook</a>
 
 			</div>
 
 			<div id="artista" class="step" data-x="6660" data-y="369" data-rotate="90" data-scale="2" data-z="-10">
 				<strong class="text-shadow">El Studio</strong>
+
+				<aside id="studio-info">
+					<div id="info-hours">
+						<div class="days">Lunes - Martes <time>11am-9pm</time></div>
+						<div class="days">Miercoles - Domingo <time>9am-3am</time></div>
+					</div>
+					<tel id="info-tel">
+						<em>+506</em> 2222<em>-</em>2222<br/>
+						<em>+506</em> 8999<em>-</em>9999
+					</tel>
+					<address>
+						Centro Colon,<br/>
+						San Jose
+					</address>
+				</aside>
+
 				<!-- BEGIN COPYING HERE -->
 				<div id="waterwheel-carousel-default">
 					<div class="carousel-controls">
-						<div class="carousel-prev"><a href="#">&lt; previous</a></div>
-						<div class="carousel-next"><a href="#">&gt; next</a></div>
+						<div class="carousel-prev"><a href="#" class="text-shadow"><</a></div>
+						<div class="carousel-next"><a href="#" class="text-shadow">></a></div>
 					</div>
 					<div id="studio-images" class="carousel-images">
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra1.jpg" alt="Test Image 1" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra2.jpg" alt="Test Image 2" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra3.jpg" alt="Test Image 3" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra4.jpg" alt="Test Image 4" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra5.jpg" alt="Test Image 5" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra6.jpg" alt="Test Image 6" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra7.jpg" alt="Test Image 7" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra8.jpg" alt="Test Image 8" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra9.jpg" alt="Test Image 9" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra10.jpg" alt="Test Image 10" />
-						<img src="//placehold.it/333x222" data-url="/assets/img/bgNegra11.jpg" alt="Test Image 11" />
+						<img src="/assets/img/bg/thumbs/1.jpg" data-url="/assets/img/bg/1.jpg" alt="Test Image 1" />
+						<img src="/assets/img/bg/thumbs/2.jpg" data-url="/assets/img/bg/2.jpg" alt="Test Image 2" />
+						<img src="/assets/img/bg/thumbs/3.jpg" data-url="/assets/img/bg/3.jpg" alt="Test Image 3" />
+						<img src="/assets/img/bg/thumbs/4.jpg" data-url="/assets/img/bg/4.jpg" alt="Test Image 4" />
+						<img src="/assets/img/bg/thumbs/5.jpg" data-url="/assets/img/bg/5.jpg" alt="Test Image 5" />
+						<img src="/assets/img/bg/thumbs/6.jpg" data-url="/assets/img/bg/6.jpg" alt="Test Image 6" />
+						<img src="/assets/img/bg/thumbs/7.jpg" data-url="/assets/img/bg/7.jpg" alt="Test Image 7" />
+						<img src="/assets/img/bg/thumbs/8.jpg" data-url="/assets/img/bg/8.jpg" alt="Test Image 8" />
+						<img src="/assets/img/bg/thumbs/9.jpg" data-url="/assets/img/bg/9.jpg" alt="Test Image 9" />
+						<img src="/assets/img/bg/thumbs/10.jpg" data-url="/assets/img/bg/10.jpg" alt="Test Image 10" />
+						<img src="/assets/img/bg/thumbs/11.jpg" data-url="/assets/img/bg/11.jpg" alt="Test Image 11" />
 					</div>
 				</div>
 				<!-- END COPYING HERE -->
@@ -206,12 +217,10 @@
 			<div id="historia" class="step" data-x="69" data-y="4340" data-rotate="180" data-scale="3" data-z="-20">
 				<strong id="life-story-title" class="text-shadow">Miss Viuda Negra</strong>
 				<div id="target" class="clearfix">
-					<p><img id="history-img-one" src="/assets/img/viudanegralong.jpg" class="fL">
+					<p><img id="history-img-one" src="/assets/img/history/long1.jpg" class="fL">
 					Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nam sodales ullamcorper urna, vel elementum massa pulvinar id. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Fusce in metus justo. Suspendisse tincidunt libero ullamcorper eros mollis faucibus. Praesent a congue lacus. Phasellus ac eros justo. Vivamus arcu nisl, pharetra a viverra quis, mattis eu nulla. Donec ultrices fringilla urna nec venenatis. Etiam volutpat nisi non sapien tempus eu euismod sapien blandit. Sed pretium, diam ac viverra faucibus, metus dolor suscipit mauris, nec ornare mauris leo a metus. Pellentesque lectus ante, consectetur ut convallis vel, sagittis id nisl. Fusce viverra fringilla orci eu vestibulum.</p>
 
-					<p>Suspendisse potenti. Nunc eu felis neque, ac pellentesque velit. Nulla sed sapien sit amet nisi egestas porta in rhoncus mi. Quisque luctus tellus et erat pellentesque adipiscing. Mauris vulputate, elit at ullamcorper ultricies, lacus est eleifend nulla, sit amet bibendum libero ipsum vel elit. Pellentesque mollis mi fringilla dui rhoncus ac porttitor nulla ultricies. Donec vehicula tempor sagittis. Aliquam erat volutpat. Sed imperdiet ipsum ac quam porttitor pellentesque. Morbi non metus eu nunc blandit lobortis. Quisque condimentum sem suscipit nibh dapibus sed porta quam laoreet.<img id="history-img-two" src="/assets/img/viudanegrasquare.jpg" class="fR"></p>
-
-					<p>Donec cursus nisi nec tortor congue tincidunt. Nulla varius ante nec tortor blandit ut congue purus ullamcorper. Quisque et sem non turpis porta iaculis eu a odio. Pellentesque malesuada justo nec lacus commodo auctor. Sed nulla ligula, venenatis adipiscing cursus in, tempus at orci. Quisque at libero ut justo bibendum pellentesque eget in tellus. Aliquam volutpat condimentum ante eget ultricies. Vestibulum velit mauris, malesuada eu hendrerit sed, iaculis sed sem. Fusce id augue sem. Phasellus auctor gravida dapibus. Ut consequat est magna. Mauris quis porttitor urna.</p>
+					<p><img id="history-img-two" src="/assets/img/history/square.jpg" class="fR"> Suspendisse potenti. Nunc eu felis neque, ac pellentesque velit. Nulla sed sapien sit amet nisi egestas porta in rhoncus mi. Quisque luctus tellus et erat pellentesque adipiscing. Mauris vulputate, elit at ullamcorper ultricies, lacus est eleifend nulla, sit amet bibendum libero ipsum vel elit. Pellentesque mollis mi fringilla dui rhoncus ac porttitor nulla ultricies. Donec vehicula tempor sagittis. Aliquam erat volutpat. Sed imperdiet ipsum ac quam porttitor pellentesque. Morbi non metus eu nunc blandit lobortis. Quisque condimentum sem suscipit nibh dapibus sed porta quam laoreet.</p>
 				</div>
 			</div>
 
@@ -234,7 +243,7 @@
 	<img id="logo-spider-wall" src="/assets/img/spiderSide.png">
 
 	<div class="hint"><p>Use a spacebar or arrow keys to navigate</p></div>
-
+	<div id="img-viewer"></div>
 	<script>
 	!function ($) {
 		$(function(){
@@ -249,7 +258,7 @@
 			$("#studio-images").on("click", "img.active", function() {
 			  var zoomLink = $(this).attr('data-url');
 			  //alert( zoomLink );
-			  $('html').css("background", "url("+ zoomLink +")");
+			  $('#img-viewer').css("background", "url("+ zoomLink +")");
 			});
 
 		})
