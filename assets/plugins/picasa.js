@@ -168,11 +168,11 @@
             function renderAlbumList(data){
                 var $albums,maxHeight=0;
                 $album_list.empty();
-        		if (data.feed && data.feed.entry){
-    	            $.each(data.feed.entry,appendImage);
-        		} else {
-          		    $this.text('Warning: No picasa albums found for user ' + user);
-		        }
+            if (data.feed && data.feed.entry){
+                  $.each(data.feed.entry,appendImage);
+            } else {
+                  $this.text('Warning: No picasa albums found for user ' + user);
+            }
                 Cache.__overview = $album_list;
                 $albums = $album_list.children();
 
@@ -199,17 +199,17 @@
                 authkey = '&authkey=' + meta_opts.authkey;
             }
  
-    	    if (meta_opts.albumid) {
-       	       showAlbum($this,meta_opts,meta_opts.albumid)
-    	    }
-	        else {
+          if (meta_opts.albumid) {
+               showAlbum($this,meta_opts,meta_opts.albumid)
+          }
+          else {
                 $this.prepend($album_list);
                 $.getJSON('http://picasaweb.google.com/data/feed/api/user/' 
                     + user + '?kind=album&access=visible' + authkey 
                     + '&alt=json-in-script&thumbsize=' + meta_opts.size + 'c&callback=?',
                     renderAlbumList
                );
-	        }
+          }
         };
 
         function showAlbum($this,meta_opts,album,title,photoCount){                        
@@ -283,31 +283,31 @@
                var $div = albumPics[i] || makeDiv();
 
                var $img = $('<img/>')
-               	   .css('borderWidth','0px')
-	           .hide()
+                   .css('borderWidth','0px')
+             .hide()
                    .load(function(){                   
                        if (meta_opts.thumb_tuner){
                            meta_opts.thumb_tuner(this,item);
                        }
-		       $img.show();
+           $img.show();
                    });
 
 
 
 
                var thumbs = item.media$group.media$thumbnail;
-	       var gotOne = false;
+         var gotOne = false;
                for (var i = 0; i<thumbs.length;i++){
                     if (thumbs[i].width == meta_opts.size && thumbs[i].height == meta_opts.size){
                         $img.attr("src", thumbs[i].url);
-			gotOne = true;
+      gotOne = true;
                         break;
                     }
                }
-	       if (!gotOne){
-	           $img.attr("alt","Sorry, no matching thumbnail found.");
-	       }
-	          
+         if (!gotOne){
+             $img.attr("alt","Sorry, no matching thumbnail found.");
+         }
+            
                var $a = $("<a/>")
                    .attr("href",item.content.src)
                    .attr("title",title)
