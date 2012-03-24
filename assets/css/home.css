@@ -1,30 +1,26 @@
 /* HOME */
 .impress-on-title { }
-#bullet-separator {
-font-size: 96px;
-margin-top: 69px;
-color: #fff;
-}
+#bullet-separator {color: white;}
 
 
 /* ARTISTA */
 .impress-on-artista { }
 #artista strong {
 font-weight: normal;
-color: rgba(0,0,0,.96);
+color: rgba(0, 0, 0, .96);
 font-family: 'Ruthie', cursive;
-font-size: 96px;
+font-size: 69px;
 position: absolute;
-top: -169px;
-left: -169px;
+top: 42px;
+left: 13px;
 }
 #studio-info {
 position: absolute;
-top: -13px;
-left: -132px;
-background: rgba(0, 0, 0,0.9);
-padding: 32px;
-border-radius: 6px;
+top: 96px;
+left: 18px;
+background: rgba(0, 0, 0, 0.9);
+padding: 13px;
+border-radius: 9px;
 }
 #info-tel em {
 color: #666;
@@ -34,6 +30,7 @@ font-size: 81%;
 color: red;
 font-weight: bold;
 font-size: 181%;
+line-height: 111%;
 margin: 13px 0;
 display: block;
 }
@@ -79,12 +76,12 @@ display: block;
 
 #artista-link {
 font-weight: normal;
-color: rgba(0,0,0,.96);
+color: rgba(0, 0, 0, .96);
 font-family: 'Ruthie', cursive;
-font-size: 81px;
+font-size: 60px;
 position: absolute;
-bottom: 55px;
-left: -133px;
+bottom: 165px;
+left: 17px;
 -moz-transform: scale(1) rotate(-13deg) translate(0px, 0px) skew(0deg, 0deg);
 -webkit-transform: scale(1) rotate(-13deg) translate(0px, 0px) skew(0deg, 0deg);
 -o-transform: scale(1) rotate(-13deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -95,12 +92,12 @@ transform: scale(1) rotate(-13deg) translate(0px, 0px) skew(0deg, 0deg);
 
 #historia-link {
 font-weight: normal;
-color: rgba(0,0,0,.96);
+color: rgba(0, 0, 0, .96);
 font-family: 'Ruthie', cursive;
-font-size: 69px;
+font-size: 60px;
 position: absolute;
-bottom: 196px;
-right: -196px;
+bottom: 142px;
+right: 24px;
 -moz-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 -webkit-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 -o-transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
@@ -122,12 +119,12 @@ text-shadow: 0px 0px 1px rgba(255, 0, 0,0.4);
 
 #life-story-title {
 font-weight: normal;
-color: rgba(0,0,0,.96);
+color: rgba(0, 0, 0, .96);
 font-family: 'Ruthie', cursive;
-font-size: 96px;
+font-size: 69px;
 position: absolute;
-bottom: -35px;
-right: 0;
+bottom: 42px;
+right: 14px;
 }
 
 
@@ -145,68 +142,74 @@ padding: 0;
 min-height: 666px;
 }
 #title h1 {
-font-size: 196px;
--webkit-transform: translateZ(50px);
--moz-transform: translateZ(50px);
--ms-transform: translateZ(50px);
--o-transform: translateZ(50px);
-transform: translateZ(50px);
+font-size: 133px;
 line-height: normal;
 display: inline-block;
 z-index: 2;
 font-weight: normal;
-color: rgba(0,0,0,.96);
+color: rgba(0, 0, 0, .96);
 font-family: 'Ruthie', cursive;
 }
 #logo-by {
 font-size: 96px;
 font-weight: normal;
-color: rgba(255,0,0,0.36);
+color: rgba(255, 0, 0, 0.36);
 font-family: 'Ruthie', cursive;
 position: absolute;
 top: 69px;
 left: -160px;
 }
+#logo-ripple {
+height: 420px;
+opacity: 0.03;
+position: absolute;
+top: 93px;
+left: 174px;
+z-index: 1;
+}
 #logo-spider {
 position: absolute;
 top: 0px;
-left: 273px;
+left: 293px;
 z-index: 2;
-max-width: 369px;
+max-width: 311px;
 }
 #logo-viuda {
 position: absolute;
-top: 209px;
-left: -37px;
+top: 239px;
+left: 69px;
 }
 #logo-negra {
 position: absolute;
-top: 189px;
-right: -58px;
+top: 239px;
+right: 52px;
 }
 .title-details {
 font-size: 18px;
-margin-top: 511px;
 text-align: center;
 z-index: 2;
+position: absolute;
+top: 81px;
+left: 126px;
 }
 
 
 /* Historia step */
 #logo-spider-walk {
 position: absolute;
-left: -94px;
-bottom: -153px;
-max-width: 222px;
+left: 6px;
+bottom: 42px;
+max-width: 142px;
 }
-
 
 
 /* ---------- gallery styles start here ----------------------- */
 #title-menu {
 display: block;
 text-align: center;
-margin-top: 69px;
+position: absolute;
+bottom: 13px;
+left: 181px;
 }
 .title-menu-links {
 list-style: none;
@@ -248,28 +251,79 @@ line-height: 1;
 
 #fb-link {
 position: absolute;
-border-color: #3c5a98;
-text-transform: lowercase;
-text-indent: 24px;
-letter-spacing: 10px;
-font-weight: bold;
-font-size: 42px;
-line-height: 54px;
-color: #fff;
-background: #3c5a98;
--moz-box-shadow: 0 0 4px rgba(0,0,0,0.4);
--webkit-box-shadow: 0 0 4px rgba(0,0,0,0.4);
-box-shadow: 0 0 4px rgba(0,0,0,0.4);
 display: block;
-width: 42px;
-height: 42px;
+width: 48px;
+height: 48px;
 overflow: hidden;
-border: 1px solid transparent;
 text-decoration: none;
-text-shadow: 0 -1px 0 rgba(0,0,0,0.5);
--moz-border-radius: 5px;
--webkit-border-radius: 5px;
-border-radius: 5px;
 right: 0;
 top: 0;
+background: transparent url(/assets/img/bf.png) no-repeat;
+background-position: -53px 0;
+text-indent: -99999px;
+opacity: 0.3;
+}
+#fb-link:hover { opacity: 0.6; }
+
+#tb-link {
+position: absolute;
+display: block;
+width: 48px;
+height: 48px;
+overflow: hidden;
+text-decoration: none;
+right: 48px;
+top: 0;
+background: transparent url(/assets/img/bf.png) no-repeat;
+background-position: 0 0;
+text-indent: -99999px;
+opacity: 0.3;
+}
+#tb-link:hover { opacity: 0.6; }
+
+
+/* Supplies page */
+#supplies { }
+#supplies .picasa-images-wrap {
+max-height: 666px;
+overflow-x: hidden;
+overflow-y: auto;
+min-height: 666px;
+}
+#supplies-gallery .picasagallery_thumbnail {
+display: inline-block;
+margin: 0;
+padding: 0;
+height: 185px;
+width: 185px;
+float: left;
+}
+
+#supplies-gallery .picasagallery_thumbnail img {
+height: 100%;
+width: 100%;
+}
+
+
+/* Gallery page */
+#gallereia {}
+#gallereia .picasa-images-wrap {
+max-height: 666px;
+overflow-x: hidden;
+overflow-y: auto;
+min-height: 666px;
+}
+#gallereia .picasagallery_album { display: inline-block; }
+#gallereia .picasa-albums-wrap { text-align: center; }
+#tattoo-gallery .picasagallery_thumbnail {
+display: inline-block;
+margin: 0;
+padding: 0;
+height: 185px;
+width: 185px;
+float: left;
+}
+#tattoo-gallery .picasagallery_thumbnail img {
+height: 100%;
+width: 100%;
 }

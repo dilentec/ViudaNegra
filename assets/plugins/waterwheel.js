@@ -411,6 +411,9 @@
           data.currentCenterItem = $item;
           // add active class to item
           $item.addClass(options.activeClassName);
+          var zoomLink = $item.attr('data-url');
+          $('#img-viewer').css("background", "url("+ zoomLink +")");
+          //alert(zoomLink);
         }
         
         // Was this item moved away from the center? fire callback

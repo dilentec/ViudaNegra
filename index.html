@@ -10,11 +10,16 @@
 	<link rel="stylesheet" href="assets/css/bootstrap.css">
 	<link rel="stylesheet" href="assets/css/home.css">
 	<link rel="stylesheet" href="assets/css/su.css">
+	<link rel="stylesheet" href="/assets/libs/fancyBox/jquery.fancybox.css">
+	<link rel="stylesheet" href="/assets/libs/fancyBox/helpers/jquery.fancybox-thumbs.css">
 
 	<!-- Libraries -->
 	<script src="assets/libs/jquery/jquery.js"></script>
 	<script src="assets/libs/bootstrap/bootstrap.js"></script>
 	<script src="assets/plugins/waterwheel.js"></script>
+	<script src="/assets/plugins/picasagallery.js"></script>
+	<script src="/assets/libs/fancyBox/jquery.fancybox.pack.js"></script>
+	<script src="/assets/libs/fancyBox/helpers/jquery.fancybox-thumbs.js"></script>
 
 
 	<!-- Disabled 
@@ -34,131 +39,29 @@
 
 	<div id="impress">
 
-			<div id="title" class="step" data-x="0" data-y="0" data-scale="1">
+			<div id="title" class="step" data-x="0" data-y="0" data-scale="2">
 				<img id="logo-spider" src="/assets/img/logo.png">
+				<img id="logo-ripple" src="http://www.ussgallifrey.com/ripple.gif">
 				<div id="logo-by" class="hide">Tattoo by</div>
 				<h1 id="logo-viuda" class="text-shadow">Viuda</h1>
 				<h1 id="logo-negra" class="text-shadow">Negra</h1>
 				<div class="title-details">TATTOO &bull; BODYMOD &bull; PIERCING &bull; IMPLANTES &bull; SCARIFICATION &bull; SUSPENSIONES</div>
 
-				<canvas id="canvasfield" width="450" height="450"></canvas>
-
-				<script>
-					var canvasField;
-					var theContext;
-					var centralPoint = new point(225, 225);	//円の中心座標
-					var divisionNumber = 72;		//円の分割数
-					var circleRadius = 180;			//円の半径
-					var circlePoints = new Array();		//円周上の座標
-					var targetPoints = new Array();		//移動目標の座標
-					var pathPoints = new Array();
-
-					var wrapDistance = 50;
-					var reactionRange = 250;
-					var k = 0;
-
-					function draw() {
-						theContext.clearRect(0, 0, 450, 450);
-						
-						theContext.save();
-						theContext.lineWidth = 1;
-						theContext.strokeStyle = "rgba(255, 0, 0, " + (0.05 * k) + ")";
-						theContext.translate(centralPoint.x, centralPoint.y);
-						theContext.scale(0.5, 0.5);
-						theContext.translate(-centralPoint.x, -centralPoint.y);
-						theContext.beginPath();
-						theContext.moveTo(pathPoints[divisionNumber - 1].x, pathPoints[divisionNumber - 1].y);
-						for (j = 0; j < divisionNumber; j++) {
-							theContext.lineTo(pathPoints[j].x, pathPoints[j].y);
-						}
-						theContext.closePath();
-						theContext.stroke();
-						theContext.restore();
-						
-						for (i = 0; i < 10; i++) {
-							theContext.save();
-							
-							theContext.lineWidth = 1;
-							theContext.strokeStyle = "rgba(255, 0, 0, " + (1 - (i + 0.05 * k) * 0.1) + ")";
-							
-							theContext.translate(centralPoint.x, centralPoint.y);
-							theContext.scale(0.5 + (i + 0.05 * k) * 0.05, 0.5 + (i + 0.05 * k) * 0.05);
-							theContext.translate(-centralPoint.x, -centralPoint.y);
-							
-							theContext.beginPath();
-							theContext.moveTo(pathPoints[divisionNumber - 1].x, pathPoints[divisionNumber - 1].y);
-							for (j = 0; j < divisionNumber; j++) {
-								theContext.lineTo(pathPoints[j].x, pathPoints[j].y);
-							}
-							theContext.closePath();
-							theContext.stroke();
-							
-							theContext.restore();
-						}
-					}
-
-					function start() {
-						canvasField = document.getElementById("canvasfield");
-						theContext = canvasField.getContext("2d");
-						
-						for (i = 0; i < divisionNumber; i++) {
-							circlePoints[i] = getPointOnCircle(circleRadius, (i * Math.PI * 2 / divisionNumber));
-							circlePoints[i].movePoint(centralPoint.x, centralPoint.y);
-							pathPoints[i] = new point(circlePoints[i].x, circlePoints[i].y);
-						}
-
-						setInterval(function(){
-							/* targetPointsを設定 */
-							for (i = 0; i < divisionNumber; i++) {
-								targetPoints[i] = new point(circlePoints[i].x, circlePoints[i].y);
-							}
-							
-							for (i = 0; i < divisionNumber; i++) {
-								pathPoints[i].movePoint((targetPoints[i].x - pathPoints[i].x) / 10, (targetPoints[i].y - pathPoints[i].y) / 10);
-							}
-							
-							k = (k + 1) % 20;
-							draw();
-						}, 100);
-					}
-
-
-					function point(theX, theY) {	//座標オブジェクト
-						this.x = theX;
-						this.y = theY;
-						this.movePoint = function(moveX, moveY) {
-							this.x += moveX;
-							this.y += moveY;
-						}
-						this.moveUsingAngle = function(theAngle, theDistance) {
-							this.x += theDistance * Math.cos(theAngle);
-							this.y += theDistance * Math.sin(theAngle);
-						}
-					}
-
-					function getPointOnCircle(r, theAngle) {
-						var x = r * Math.cos(theAngle);
-						var y = r * Math.sin(theAngle);
-						return new point(x, y);
-					}
-					start();
-				</script>
-
 				<nav id="title-menu">
 					<ul class="title-menu-links clearfix">
-						<li><a href="/gallery" id="gallery-link" class="text-shadow">Gallereia</a></li>
+						<li><a href="/#/gallereia" id="gallery-link" class="text-shadow">Gallereia</a></li>
 						<li id="bullet-separator" class="text-shadow">&bull;</li>
-						<li><a href="/supplies" id="supplies-link" class="text-shadow">Supplies</a></li>
+						<li><a href="/#/supplies" id="supplies-link" class="text-shadow">Supplies</a></li>
 					</ul>
 				</nav>
 
 				<a href="/#/historia" id="historia-link" class="text-shadow">Historia <em>→</em></a>
 				<a href="/#/artista" id="artista-link" class="text-shadow"><em>←</em> Studio</a>
 				<a href="//facebook.com/viudanegra" id="fb-link" target="_new" rel="tip" title="Visitante Viuda Negra en Facebook" data-placement="left">Facebook</a>
-
+				<a href="//tumblr.com/viudanegra" id="tb-link" target="_new" rel="tip" title="Visitante Viuda Negra Blog" data-placement="left">Blog</a>
 			</div>
 
-			<div id="artista" class="step" data-x="6660" data-y="369" data-rotate="90" data-scale="2" data-z="-10">
+			<div id="artista" class="step" data-x="-1619" data-y="1066" data-rotate="0" data-scale="1" data-z="10000">
 				<strong class="text-shadow">El Studio</strong>
 
 				<aside id="studio-info">
@@ -183,30 +86,36 @@
 						<div class="carousel-next"><a href="#" class="text-shadow">></a></div>
 					</div>
 					<div id="studio-images" class="carousel-images">
-						<img src="/assets/img/studio/thumbs/1.jpg" data-url="/assets/img/studio/1.jpg" alt="Test Image 1" />
-						<img src="/assets/img/studio/thumbs/2.jpg" data-url="/assets/img/studio/2.jpg" alt="Test Image 2" />
-						<img src="/assets/img/studio/thumbs/3.jpg" data-url="/assets/img/studio/3.jpg" alt="Test Image 3" />
-						<img src="/assets/img/studio/thumbs/4.jpg" data-url="/assets/img/studio/4.jpg" alt="Test Image 4" />
-						<img src="/assets/img/studio/thumbs/5.jpg" data-url="/assets/img/studio/5.jpg" alt="Test Image 5" />
-						<img src="/assets/img/studio/thumbs/6.jpg" data-url="/assets/img/studio/6.jpg" alt="Test Image 6" />
-						<img src="/assets/img/studio/thumbs/7.jpg" data-url="/assets/img/studio/7.jpg" alt="Test Image 7" />
-						<img src="/assets/img/studio/thumbs/8.jpg" data-url="/assets/img/studio/8.jpg" alt="Test Image 8" />
-						<img src="/assets/img/studio/thumbs/9.jpg" data-url="/assets/img/studio/9.jpg" alt="Test Image 9" />
-						<img src="/assets/img/studio/thumbs/10.jpg" data-url="/assets/img/studio/10.jpg" alt="Test Image 10" />
-						<img src="/assets/img/studio/thumbs/11.jpg" data-url="/assets/img/studio/11.jpg" alt="Test Image 11" />
-						<img src="/assets/img/studio/thumbs/12.jpg" data-url="/assets/img/studio/12.jpg" alt="Test Image 12" />
-						<img src="/assets/img/studio/thumbs/13.jpg" data-url="/assets/img/studio/13.jpg" alt="Test Image 13" />
-						<img src="/assets/img/studio/thumbs/14.jpg" data-url="/assets/img/studio/14.jpg" alt="Test Image 14" />
-						<img src="/assets/img/studio/thumbs/15.jpg" data-url="/assets/img/studio/15.jpg" alt="Test Image 15" />
-						<img src="/assets/img/studio/thumbs/16.jpg" data-url="/assets/img/studio/16.jpg" alt="Test Image 16" />
-						<img src="/assets/img/studio/thumbs/17.jpg" data-url="/assets/img/studio/17.jpg" alt="Test Image 17" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/1.jpg" alt="Test Image 1" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/2.jpg" alt="Test Image 2" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/3.jpg" alt="Test Image 3" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/4.jpg" alt="Test Image 4" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/5.jpg" alt="Test Image 5" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/6.jpg" alt="Test Image 6" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/7.jpg" alt="Test Image 7" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/8.jpg" alt="Test Image 8" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/9.jpg" alt="Test Image 9" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/10.jpg" alt="Test Image 10" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/11.jpg" alt="Test Image 11" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/12.jpg" alt="Test Image 12" />
+						<img src="//placehold.it/187x123" data-url="/assets/img/studio/13.jpg" alt="Test Image 13" />
 					</div>
 				</div>
 				<!-- END COPYING HERE -->
 				<img id="logo-spider-walk" src="/assets/img/spiderWalking.png">
 			</div>
 
-			<div id="historia" class="step" data-x="69" data-y="4340" data-rotate="180" data-scale="3" data-z="-20">
+			<div id="gallereia" class="step" data-x="-666" data-y="2340" data-rotate="0" data-scale="1" data-z="5000">
+				<strong id="life-story-title" class="text-shadow">Tattoo galleria</strong>
+				<div id="tattoo-gallery" class="clearfix"></div>
+			</div>
+
+			<div id="supplies" class="step" data-x="666" data-y="2340" data-rotate="0" data-scale="1" data-z="5000">
+				<strong id="life-story-title" class="text-shadow">Tattoo supplies</strong>
+				<div id="supplies-gallery" class="clearfix"></div>
+			</div>
+
+			<div id="historia" class="step" data-x="1699" data-y="1166" data-rotate="0" data-scale="1" data-z="15000">
 				<strong id="life-story-title" class="text-shadow">Miss Viuda Negra</strong>
 				<div id="target" class="clearfix">
 					<p><img id="history-img-one" src="/assets/img/history/long1.jpg" class="fL">
@@ -226,10 +135,11 @@
 							the element around given axis in degrees; their default value is 0; `data-rotate` and `data-rotate-z`
 							are exactly the same;
 					* `data-scale` -- defines the scale of step element; default value is 1
-					
+					<div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10"></div>
 			-->
-			<!-- <div id="overview" class="step" data-x="3000" data-y="1500" data-scale="10">
-			</div> -->
+
+			
+
 	</div>
 
 	<img id="logo-spider-wall" src="/assets/img/spiderSide.png">
@@ -246,6 +156,8 @@
 			impress();
 
 			$("#waterwheel-carousel-default").waterwheelCarousel();
+
+			$('#tattoo-gallery').picasagallery( {'username':'secretgspot', 'thumbnail_width' : '200' } );
 
 			$("#studio-images").on("click", "img.active", function() {
 			  var zoomLink = $(this).attr('data-url');

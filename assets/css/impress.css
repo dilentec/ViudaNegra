@@ -17,6 +17,7 @@ box-sizing:         border-box;
 -ms-transition:     opacity 1s;
 -o-transition:      opacity 1s;
 transition:         opacity 1s;
+min-height: 666px;
 }
 
 /* fade out inactive slides */

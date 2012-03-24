@@ -1,0 +1,38 @@
+.picasagallery { position: relative; }
+.picasagallery_header {
+clear: both;
+cursor: pointer;
+margin: 10px;
+}
+.picasagallery_title { margin: 10px; }
+.picasagallery_album {
+float: left;
+text-align: center;
+margin: 10px;
+}
+.picasagallery_thumbnail {
+display: inline-block;
+vertical-align: top;
+padding: 0;
+margin: 0;
+height: 200px;
+width: 200px;
+text-align: center;
+}
+.picasagallery_album img { cursor: pointer; margin: 0px; }
+.picasagallery_thumbnail img {
+cursor: pointer;
+margin: 0;
+padding: 0;
+max-height: 200px;
+max-width: 200px;
+height: 100%;
+width: 100%;
+}
+.picasagallery_photo {
+position: absolute;
+z-index: 1;
+top: 0;
+left: 0;
+display: none;
+}

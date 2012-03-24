@@ -2,10 +2,10 @@
 Default Example
 *********************/
 #waterwheel-carousel-default {
-height: 290px;
+height: 169px;
 position: relative;
 clear: both;
-top: 333px;
+top: 500px;
 }
 #waterwheel-carousel-default a {
 color: #fff;
@@ -19,14 +19,14 @@ visibility:hidden;
 cursor:pointer;
 }
 #waterwheel-carousel-default .carousel-controls .carousel-prev {
-position:absolute;
-top: 96px;
-left: -69px;
+position: absolute;
+bottom: 6px;
+left: 11px;
 }
 #waterwheel-carousel-default .carousel-controls .carousel-next {
-position:absolute;
-top: 96px;
-right: -69px;
+position: absolute;
+bottom: 6px;
+right: 11px;
 }
 
 /********************
@@ -37,8 +37,6 @@ width:960px;
 background-color:#CCC;
 border:1px solid #222;
 height:300px;
-font-family: Arial;
-font-size:14px;
 position:relative;
 clear:both;
 overflow:hidden;
@@ -69,8 +67,6 @@ width:960px;
 background-color:#CCC;
 border:1px solid #222;
 height:250px;
-font-family: Arial;
-font-size:14px;
 position:relative;
 clear:both;
 overflow:hidden;
@@ -90,69 +86,5 @@ left:30px;
 #waterwheel-carousel-horizon .carousel-controls .carousel-next {
 position:absolute;
 bottom:20px;
-right:30px;
-}
-
-/********************
-Flat
-*********************/
-#waterwheel-carousel-flat {
-width:960px;
-background-color:#CCC;
-border:1px solid #222;
-height:250px;
-font-family: Arial;
-font-size:14px;
-position:relative;
-clear:both;
-overflow:hidden;
-}
-#waterwheel-carousel-flat a {
-color:#222;
-}
-#waterwheel-carousel-flat .carousel-images img {
-visibility:hidden;
-cursor:pointer;
-}
-#waterwheel-carousel-flat .carousel-controls .carousel-prev {
-position:absolute;
-bottom:20px;
-left:30px;
-}
-#waterwheel-carousel-flat .carousel-controls .carousel-next {
-position:absolute;
-bottom:20px;
-right:30px;
-}
-
-
-/********************
-Vertical
-*********************/
-#waterwheel-carousel-vertical {
-width:330px;
-background-color:#CCC;
-border:1px solid #222;
-height:600px;
-font-family: Arial;
-font-size:14px;
-position:relative;
-clear:both;
-}
-#waterwheel-carousel-vertical a {
-color:#222;
-}
-#waterwheel-carousel-vertical .carousel-images img {
-visibility:hidden;
-cursor:pointer;
-}
-#waterwheel-carousel-vertical .carousel-controls .carousel-prev {
-position:absolute;
-top:30px;
-right:30px;
-}
-#waterwheel-carousel-vertical .carousel-controls .carousel-next {
-position:absolute;
-bottom:30px;
 right:30px;
 }
