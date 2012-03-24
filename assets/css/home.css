@@ -117,15 +117,20 @@ transform: scale(1) rotate(33deg) translate(0px, 0px) skew(0deg, 0deg);
 }
 #historia-link:hover { color: #fff; text-decoration: none; }
 
-#target img { margin: 0 13px 13px 0; }
+#target img { margin: 0; }
 #target p {
 padding: 9px 13px 9px 0;
-font-size: 142%;
+font-size: 24px;
 line-height: normal;
 color: #999;
 text-shadow: 0px 0px 1px rgba(255, 0, 0,0.4);
+margin-right: 103px;
 }
-#history-img-one { max-height: 420px; }
+#history-img-one {
+max-height: 420px;
+position: absolute;
+right: -293px;
+}
 #history-img-two { max-width: 142px; padding: 13px; }
 
 #life-story-title {
@@ -331,6 +336,7 @@ overflow-y: auto;
 min-height: 666px;
 }
 #gallereia .picasagallery_album { display: inline-block; }
+#gallereia .picasagallery_album img { border-radius: 113px; cursor: pointer; }
 #gallereia .picasa-albums-wrap { text-align: center; margin-top: 189px; }
 #tattoo-gallery .picasagallery_thumbnail {
 display: inline-block;
