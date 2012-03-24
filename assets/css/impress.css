@@ -29,16 +29,11 @@ min-height: 666px;
 .hint {
 position: fixed;
 left: 0;
-right: 0;
-bottom: 42px;
-
+top: 13px;
 background: rgba(0,0,0,0.5);
 color: #EEE;
 text-align: center;
-
-font-size: 50px;
-padding: 20px;
-
+padding: 6px 9px 0 9px;
 z-index: 100;
 
 opacity: 0;
@@ -56,7 +51,7 @@ transform:         translateY(400px);
 transition:         opacity 1s,         transform 0.5s 1s;
 }
 
-.impress-on-bored .hint {
+.impress-on-title .hint {
 opacity: 1;
 
 -webkit-transition: opacity 1s 5s, -webkit-transform 0.5s;
