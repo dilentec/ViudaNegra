@@ -11,16 +11,18 @@ color: rgba(0, 0, 0, .96);
 font-family: 'Ruthie', cursive;
 font-size: 69px;
 position: absolute;
-top: 42px;
-left: 13px;
+top: 62px;
+left: 33px;
+z-index: 7;
 }
 #studio-info {
 position: absolute;
-top: 96px;
-left: 18px;
+top: 32px;
+right: 33px;
 background: rgba(0, 0, 0, 0.9);
 padding: 13px;
 border-radius: 9px;
+z-index: 1;
 }
 #info-tel em {
 color: #666;
@@ -51,15 +53,24 @@ line-height: normal;
 }
 .impress-on-artista #img-viewer { display: block; }
 #img-viewer {
-position: fixed;
+position: absolute;
 top: 0;
-bottom: 0;
 left: 0;
-right: 0;
+background: url(/assets/img/studio/1.jpg);
 background-size: cover;
 background-position: 0 0;
 display: none;
-z-index: -1;
+width: 940px;
+height: 666px;
+}
+#img-frame {
+position: absolute;
+top: -200px;
+left: -210px;
+width: 1380px;
+height: 1064px;
+max-width: 1360px;
+z-index: 6;
 }
 
 
@@ -197,9 +208,10 @@ left: 126px;
 /* Historia step */
 #logo-spider-walk {
 position: absolute;
-left: 6px;
-bottom: 42px;
+left: -32px;
+bottom: -33px;
 max-width: 142px;
+z-index: 10;
 }
 
 
@@ -306,7 +318,12 @@ width: 100%;
 
 
 /* Gallery page */
-#gallereia {}
+#gallereia { 
+width: 1123px; 
+background: transparent url(/assets/img/skull-frameB.png) no-repeat;
+background-size: contain;
+background-position: 50% 50%;
+}
 #gallereia .picasa-images-wrap {
 max-height: 666px;
 overflow-x: hidden;
@@ -314,7 +331,7 @@ overflow-y: auto;
 min-height: 666px;
 }
 #gallereia .picasagallery_album { display: inline-block; }
-#gallereia .picasa-albums-wrap { text-align: center; }
+#gallereia .picasa-albums-wrap { text-align: center; margin-top: 189px; }
 #tattoo-gallery .picasagallery_thumbnail {
 display: inline-block;
 margin: 0;

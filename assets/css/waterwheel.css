@@ -2,10 +2,12 @@
 Default Example
 *********************/
 #waterwheel-carousel-default {
-height: 169px;
-position: relative;
+height: 113px;
+position: absolute;
 clear: both;
-top: 500px;
+bottom: -33px;
+width: 855px;
+right: 33px;
 }
 #waterwheel-carousel-default a {
 color: #fff;
@@ -20,13 +22,15 @@ cursor:pointer;
 }
 #waterwheel-carousel-default .carousel-controls .carousel-prev {
 position: absolute;
-bottom: 6px;
-left: 11px;
+bottom: 325px;
+left: -86px;
+z-index: 9;
 }
 #waterwheel-carousel-default .carousel-controls .carousel-next {
 position: absolute;
-bottom: 6px;
-right: 11px;
+bottom: 315px;
+right: -62px;
+z-index: 10;
 }
 
 /********************
