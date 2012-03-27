@@ -11,7 +11,10 @@ right: 33px;
 }
 #waterwheel-carousel-default a {
 color: #fff;
-font-size: 50px;
+font-size: 296px;
+font-family: 'Ruthie';
+line-height: 69px;
+display: block;
 }
 #waterwheel-carousel-default a:hover {
   text-decoration: none;
@@ -22,14 +25,14 @@ cursor:pointer;
 }
 #waterwheel-carousel-default .carousel-controls .carousel-prev {
 position: absolute;
-bottom: 325px;
-left: -86px;
-z-index: 9;
+bottom: 32px;
+left: 32px;
+z-index: 10;
 }
 #waterwheel-carousel-default .carousel-controls .carousel-next {
 position: absolute;
-bottom: 315px;
-right: -62px;
+bottom: 32px;
+right: 32px;
 z-index: 10;
 }
 
