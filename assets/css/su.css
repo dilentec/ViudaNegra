@@ -1,7 +1,6 @@
 @import url(custom.css);
 @import url(impress.css);
 @import url(home.css);
-@import url(waterwheel.css);
 
 @font-face {
   font-family: 'Ruthie';
@@ -57,10 +56,14 @@ margin: 0; padding: 0;
 #oilPaint { opacity: 0.11; position: absolute; top: 0; bottom: 0; left: 0; right: 0; }
 
 
-/* GALLERY PAGE
+/* STUDIO PAGE
 *********************
 */
-
+#myCarousel { margin: 0; padding: 0; }
+.carousel-inner { height: 666px; width: 940px; }
+.carousel-control { z-index: 9; top: 55%; }
+.carousel .item { width: 940px; height: 666px; }
+.carousel .item img { width: 100%; height: 100%; }
 
 /* MERCHENDIZE PAGE
 *********************

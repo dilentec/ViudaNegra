@@ -7,22 +7,15 @@
 
 	<title>Viuda Negra | Costa Rica </title>
 
-	<link rel="stylesheet" href="assets/css/bootstrap.css">
+	<link rel="stylesheet" href="assets/libs/bootstrap/css/bootstrap.min.css">
 	<link rel="stylesheet" href="assets/css/su.css">
-	<link rel="stylesheet" href="/assets/libs/fancyBox/jquery.fancybox.css">
-	<link rel="stylesheet" href="/assets/libs/fancyBox/helpers/jquery.fancybox-thumbs.css">
+	<link rel="stylesheet" href="assets/css/googleslides.css">
 
 	<!-- Libraries -->
 	<script src="assets/libs/jquery/jquery.js"></script>
-	<script src="assets/libs/bootstrap/bootstrap.js"></script>
-	<script src="assets/plugins/waterwheel.js"></script>
-	<script src="/assets/plugins/picasagallery.js"></script>
-	<script src="/assets/libs/fancyBox/jquery.fancybox.pack.js"></script>
-	<script src="/assets/libs/fancyBox/helpers/jquery.fancybox-thumbs.js"></script>
-
+	<script src="assets/plugins/googleslides.js"></script>
 
 	<!-- Disabled 
-	<script src="assets/libs/slimbox/slimbox2.js"></script>
 	<script src="assets/libs/underscore/underscore.js"></script>
 	<script src="assets/libs/backbone/backbone.js"></script>
 	<script src="assets/libs/jquery/easing.js"></script>-->
@@ -78,36 +71,12 @@
 					</address>
 				</aside>
 
-				<div id="img-viewer"><img id="img-frame" src="/assets/img/frame.png"></div>
+				<div id="studioGallery"></div>
 
-				<!-- BEGIN COPYING HERE -->
-				<div id="waterwheel-carousel-default">
-					<div class="carousel-controls">
-						<div class="carousel-prev"><a href="#" class="text-shadow"><</a></div>
-						<div class="carousel-next"><a href="#" class="text-shadow">></a></div>
-					</div>
-					<div id="studio-images" class="carousel-images">
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/1.jpg" alt="Test Image 1" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/2.jpg" alt="Test Image 2" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/3.jpg" alt="Test Image 3" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/4.jpg" alt="Test Image 4" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/5.jpg" alt="Test Image 5" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/6.jpg" alt="Test Image 6" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/7.jpg" alt="Test Image 7" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/8.jpg" alt="Test Image 8" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/9.jpg" alt="Test Image 9" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/10.jpg" alt="Test Image 10" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/11.jpg" alt="Test Image 11" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/12.jpg" alt="Test Image 12" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/13.jpg" alt="Test Image 13" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/14.jpg" alt="Test Image 14" />
-						<img src="//placehold.it/96x69" data-url="/assets/img/studio/15.jpg" alt="Test Image 15" />
-					</div>
-				</div>
-				<!-- END COPYING HERE -->
+				<img id="img-frame" src="/assets/img/frame.png">
 				<img id="logo-spider-walk" src="/assets/img/spiderWalking.png">
 			</div>
-
+<!-- 
 			<div id="gallereia" class="step" data-x="-666" data-y="2340" data-rotate="0" data-scale="1" data-z="5000">
 				<strong id="life-story-title" class="text-shadow">Tattoo galleria</strong>
 				<div id="tattoo-gallery" class="clearfix"></div>
@@ -117,7 +86,7 @@
 				<strong id="life-story-title" class="text-shadow">Tattoo supplies</strong>
 				<div id="supplies-gallery" class="clearfix"></div>
 			</div>
-
+ -->
 			<div id="historia" class="step" data-x="1699" data-y="1166" data-rotate="0" data-scale="1" data-z="15000">
 				<strong id="life-story-title" class="text-shadow">Miss Viuda Negra</strong>
 				<div id="target" class="clearfix">
@@ -155,7 +124,7 @@
 	!function ($) {
 		$(function(){
 
-			$('[rel=tip]').tooltip();
+			//$('[rel=tip]').tooltip();
 			//$("[rel=pop]").popover();
 
 			var viuda = impress();
@@ -170,15 +139,15 @@
 				e.preventDefault();
 			});
 
-			$("#waterwheel-carousel-default").waterwheelCarousel();
+			$('#studioGallery').googleslides({userid:'118427096225421100175', albumid:'5726920012775979185', time: '6000' });
 
-			$('#supplies-gallery').picasagallery( {'username':'viudanegracr'} );
+			//$('#supplies-gallery').picasagallery( {'username':'viudanegracr'} );
 
-			$("#studio-images").on("click", "img.active", function() {
-			  var zoomLink = $(this).attr('data-url');
-			  //alert( zoomLink );
-			  $('#img-viewer').css("background", "url("+ zoomLink +")");
-			});
+			// $("#studio-images").on("click", "img.active", function() {
+			// 	var zoomLink = $(this).attr('data-url');
+			// 	//alert( zoomLink );
+			// 	$('#img-viewer').css("background", "url("+ zoomLink +")");
+			// });
 
 		})
 	}(window.jQuery);

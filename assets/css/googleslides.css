@@ -1,0 +1,23 @@
+.googleslides { padding: 0; overflow: hidden; margin: 0; height: 666px; width: 940px; }
+.googleslide  { display:none; position:relative; height: 666px; width: 940px; }
+.googleslide a:link { text-decoration:none; display: block; }
+.googleslide img {
+width: 100% !important;
+height: 100%;
+margin: 0;
+padding: 0;
+max-height: 100%;
+max-width: 100%;
+}
+.googleslide .caption { padding: 5px 5px 5px 10px; }
+.googleslide .captionWrapper {
+	background-color:#000000;
+	color:white;
+	opacity:0.6;
+	filter:alpha(opacity=60); /* For IE8 and earlier */
+	height:30px;
+	padding:0;
+	bottom:4px;
+	overflow:none;
+	position:absolute;	
+}
