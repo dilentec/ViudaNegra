@@ -1,22 +1,47 @@
-#gallery-container {
-position: absolute;
-top: 42px;
-overflow: hidden;
-cursor: move;
-bottom: 0;
-left: 0;
-right: 0;
+body { background: black url(/assets/img/bg/3.jpg) !important; }
+
+#vn-gallery h1 {
+margin: 1em 0 0 1em;
+padding: 20px;
+font-size: 42px;
+color: white;
+text-align: left;
+font-weight: 400;
+text-align: left;
 }
-.album {
-width: 1600px;
-padding: 0;
-margin: 0;
+
+.content {
+position: relative;
+width: 580px;
+margin: 0 auto;
 }
-.album li {
-float: left;
-list-style-type: none;
+
+
+.bmenu{
+    margin: 1em 0 0 6em;
+    position: relative;
 }
-.show-more {
-margin: 0 !important;
-padding: 0 !important;
+.bmenu li{
+    font-size: 50px;
+    display: block;
+}
+.bmenu li a{
+	color: transparent;
+	display: block;
+	text-transform: uppercase;
+	text-shadow: 0px 0px 4px #fff;
+	letter-spacing: 1px;
+	-webkit-transition: all 0.2s ease-in-out;
+	-moz-transition: all 0.2s ease-in-out;
+	-o-transition: all 0.2s ease-in-out;
+	-ms-transition: all 0.2s ease-in-out;
+	transition: all 0.2s ease-in-out;
+}
+.bmenu:hover li a{
+	text-shadow: 0px 0px 6px #fff;
+}
+.bmenu li a:hover{
+	color: #fff;
+	text-shadow: 0px 0px 1px #fff;
+	padding-left: 10px;
 }
