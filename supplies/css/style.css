@@ -126,10 +126,11 @@ body {
 }
 
 #portfolio .item div img {
-	position:absolute;
-	top:0;
-	left:50%;
-	margin-left:-300px;
+position: absolute;
+top: 0;
+left: 50%;
+margin-left: -200px;
+width: 400px;
 }
 
 #portfolio .paths {
