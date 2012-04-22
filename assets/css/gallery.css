@@ -1,4 +1,3 @@
-body { background: black url(/assets/img/bg/3.jpg) !important; }
 
 #vn-gallery h1 {
 margin: 1em 0 0 1em;
@@ -12,8 +11,8 @@ text-align: left;
 
 .content {
 position: relative;
-width: 580px;
-margin: 0 auto;
+width: 850px;
+margin: 0 auto !important;
 }
 
 

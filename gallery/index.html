@@ -8,6 +8,7 @@
   <title>Viuda Negra Gallery | Costa Rica </title>
 
   <link rel="stylesheet" href="/assets/css/gallery.css">
+  <link rel="stylesheet" href="/assets/css/slimbox.css">
   <link rel="stylesheet" href="/assets/css/su.css">
 </head>
 
@@ -17,15 +18,11 @@
 
   <div role="main" id="main" class="content">
 
-    <h1>Gallereia Viuda Negra</h1>
+    <h1><a href="/#/gallereia"><</a> Gallereia Viuda Negra</h1>
 
-    <ul class="bmenu">
-        <li><a href="#">Tattoos</a></li>
-        <li><a href="#">Illustrations</a></li>
-        <li><a href="#">Photography</a></li>
-        <li><a href="#">Personal</a></li>
-    </ul>
+    <div id="gallery-albums"></div>
 
+    <!-- <div id="gallery-container"></div> -->
   </div>
 
 
@@ -34,9 +31,9 @@
   <!-- Libraries -->
   <script src="/assets/libs/jquery/jquery.js"></script>
 
-  <!-- Plugins 
+  <!-- Plugins -->
   <script src="/assets/plugins/picasa.js"></script>
-  <script src="/assets/plugins/slimbox.js"></script>-->
+  <script src="/assets/plugins/slimbox.js"></script>
 
   <script>
   !function ($) {
@@ -44,13 +41,27 @@
 
       // PICASA
       ////////////////////////
-      // jQuery("#gallery-container").EmbedPicasaGallery('secretGspot',{
-      //   albumid: "5520358457052524865",
+      // jQuery("#gallery-container").EmbedPicasaGallery('118427096225421100175',{
+      //   albumid: "5730924108092186817",
       //   size: 160, // thumb size (32,48,64,72,144,160))
-      //   loading_animation: "/img/loading.gif",
-      //   msg_more: 'more',
-      //   show_more: 8
+      //   loading_animation: "/assets/img/loader.gif",
+      //   msg_more: 'mas',
+      //   show_more: 32,
+      //   album_title_tag: '<h3/>'
+
+      //   //album_hover: [showInfo,hideInfo],
+      //   //album_toggle: [showInfo,hideInfo]
       //  });
+
+      jQuery("#gallery-albums").EmbedPicasaGallery('118427096225421100175',{
+      //  matcher: /Best/,
+      //  auto_open: true,
+      //  hide_back: true,
+        size: 160,
+        loading_animation: '/assets/img/loader.gif',
+        album_title_tag:    '<h3/>'
+      });
+
 
     })
   }(window.jQuery)
