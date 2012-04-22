@@ -1,13 +1,19 @@
-
-#vn-gallery h1 {
-margin: 1em 0 0 1em;
-padding: 20px;
-font-size: 42px;
+#vn-gallery #gal-title {
+margin: 0;
+padding: 9px 32px;
+font-size: 22px;
 color: white;
-text-align: left;
 font-weight: 400;
-text-align: left;
+position: fixed;
+top: 0;
+left: 0;
+z-index: 9;
+background: black;
+font-family: arial;
 }
+
+#gallery-albums { margin-top: 69px; }
+.gal-button { color: #666; }
 
 .content {
 position: relative;
@@ -15,6 +21,13 @@ width: 850px;
 margin: 0 auto !important;
 }
 
+.album h2 {
+color: white;
+text-shadow: 2px 1px 1px red;
+font-size: 33px;
+margin: 0;
+padding: 0;
+}
 
 .bmenu{
     margin: 1em 0 0 6em;

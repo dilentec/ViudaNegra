@@ -7,10 +7,8 @@
 
   <title>Viuda Negra Gallery | Costa Rica </title>
 
-  <link rel="stylesheet" href="/assets/css/bootstrap.css">
-  <link rel="stylesheet" href="/assets/css/picasagallery.css">
-  <link rel="stylesheet" href="/assets/libs/fancyBox/jquery.fancybox.css">
-  <link rel="stylesheet" href="/assets/libs/fancyBox/helpers/jquery.fancybox-thumbs.css">
+  <link rel="stylesheet" href="/assets/css/gallery.css">
+  <link rel="stylesheet" href="/assets/css/slimbox.css">
   <link rel="stylesheet" href="/assets/css/su.css">
 </head>
 
@@ -18,10 +16,13 @@
 
 <body id="vn-gallery">
 
-  <div role="main" id="main">
+  <div role="main" id="main" class="content">
 
-    <div id="gallery-container" class="picasagallery"></div>
+    <h1 id="gal-title"><a href="/#/gallereia"><</a> Gallereia Viuda Negra</h1>
 
+    <div id="gallery-albums"></div>
+
+    <!-- <div id="gallery-container"></div> -->
   </div>
 
 
@@ -31,10 +32,9 @@
   <script src="/assets/libs/jquery/jquery.js"></script>
 
   <!-- Plugins -->
-  <script src="/assets/plugins/picasagallery.js"></script>
-  <script src="/assets/libs/fancyBox/jquery.fancybox.pack.js"></script>
-  <script src="/assets/libs/fancyBox/helpers/jquery.fancybox-thumbs.js"></script>
-  <!-- <script src="/assets/plugins/kinetic.js"></script>-->
+  <script src="/assets/plugins/picasa.js"></script>
+  <script src="/assets/plugins/slimbox.js"></script>
+  <script src="/assets/plugins/montage.js"></script>
 
   <script>
   !function ($) {
@@ -42,9 +42,26 @@
 
       // PICASA
       ////////////////////////
-      $('.picasagallery').picasagallery( {'username':'secretgspot', 'thumbnail_width' : '200' } );
+      // jQuery("#gallery-container").EmbedPicasaGallery('118427096225421100175',{
+      //   albumid: "5730924108092186817",
+      //   size: 160, // thumb size (32,48,64,72,144,160))
+      //   loading_animation: "/assets/img/loader.gif",
+      //   msg_more: 'mas',
+      //   show_more: 32,
+      //   album_title_tag: '<h3/>'
 
-      //$('#gallery-container').kinetic();    
+      //   //album_hover: [showInfo,hideInfo],
+      //   //album_toggle: [showInfo,hideInfo]
+      //  });
+
+      jQuery("#gallery-albums").EmbedPicasaGallery('118427096225421100175',{
+      //  matcher: /Best/,
+      //  auto_open: true,
+      //  hide_back: true,
+        size: 160,
+        loading_animation: '/assets/img/loader.gif'
+      });
+
 
     })
   }(window.jQuery)

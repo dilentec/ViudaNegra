@@ -18,7 +18,7 @@
 
   <div role="main" id="main" class="content">
 
-    <h1><a href="/#/gallereia"><</a> Gallereia Viuda Negra</h1>
+    <h1 id="gal-title"><a href="/#/gallereia"><</a> Gallereia Viuda Negra</h1>
 
     <div id="gallery-albums"></div>
 
@@ -34,6 +34,7 @@
   <!-- Plugins -->
   <script src="/assets/plugins/picasa.js"></script>
   <script src="/assets/plugins/slimbox.js"></script>
+  <script src="/assets/plugins/montage.js"></script>
 
   <script>
   !function ($) {
@@ -58,8 +59,7 @@
       //  auto_open: true,
       //  hide_back: true,
         size: 160,
-        loading_animation: '/assets/img/loader.gif',
-        album_title_tag:    '<h3/>'
+        loading_animation: '/assets/img/loader.gif'
       });
 
 

@@ -23,9 +23,9 @@
         defaultOptions: {
             matcher : RegExp('.+'),
             size    : 72,
-            msg_loading_list : 'Loading album list from PicasaWeb',
-            msg_back : 'back',
-            msg_more : 'more',
+            msg_loading_list : 'esperese..',
+            msg_back : 'vuelta',
+            msg_more : 'mas',
             album_title_tag: '<h2/>',
             auto_open: false,
             thumb_id_prefix: 'pThumb_',
@@ -230,6 +230,7 @@
                      })
                     .append($("<div/>")
                         .html('<br/>'+text)
+                        .addClass('gal-button')
                         .css({'borderStyle':'outset',
                               'borderWidth':'1px',
                               'textAlign'  :'center',
